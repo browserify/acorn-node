@@ -19,7 +19,7 @@ module.exports = exports = xtend(acorn, {
   },
   tokenizer: function tokenizer (src, opts) {
     return acorn.tokenizer(src, mapOptions(opts))
-  },
+  }
 })
 
 require('./lib/object-spread')(exports)

@@ -34,5 +34,10 @@
     "test": "standard && node test/index.js",
     "prepublish": "npm run build",
     "build": "node build.js"
+  },
+  "standard": {
+    "ignore": [
+      "lib/*/*.js"
+    ]
   }
 }
