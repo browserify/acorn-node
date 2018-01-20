@@ -20,3 +20,12 @@ test('does not change main acorn module', function (t) {
   })
   t.end()
 })
+
+test('tokenizes object spread syntax', function (t) {
+  var tokenizer = acorn.tokenizer('var a = { ...b }')
+
+  t.doesNotThrow(function (t) {
+    while (tokenizer.getToken().type !== acorn.tokTypes.eof) {}
+  })
+  t.end()
+})
