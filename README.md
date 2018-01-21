@@ -31,6 +31,12 @@ The API is the same as [acorn](https://github.com/acornjs/acorn), but the follow
 
  - Object rest spread (via [acorn5-object-spread](https://github.com/adrianheine/acorn5-object-spread))
 
+And the following options have different defaults from acorn, to match Node modules:
+
+ - `ecmaVersion: 9`
+ - `allowHashBang: true`
+ - `allowReturnOutsideFunction: true`
+
 ## License
 
 [Apache-2.0](LICENSE.md)

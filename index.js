@@ -3,7 +3,11 @@ var xtend = require('xtend')
 
 function mapOptions (opts) {
   if (!opts) opts = {}
-  opts = xtend({ ecmaVersion: 9 }, opts)
+  opts = xtend({
+    ecmaVersion: 9,
+    allowHashBang: true,
+    allowReturnOutsideFunction: true
+  }, opts)
   opts.plugins = xtend(opts.plugins, {
     objectSpread: true
   })
