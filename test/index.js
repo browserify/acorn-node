@@ -29,3 +29,17 @@ test('tokenizes object spread syntax', function (t) {
   })
   t.end()
 })
+
+test('allows hashbangs by default', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('#!/usr/bin/env node\nconsole.log("ok")')
+  })
+  t.end()
+})
+
+test('allows top level return by default', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('console.log("ok"); return; console.log("not ok")')
+  })
+  t.end()
+})
