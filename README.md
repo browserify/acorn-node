@@ -37,6 +37,13 @@ And the following options have different defaults from acorn, to match Node modu
  - `allowHashBang: true`
  - `allowReturnOutsideFunction: true`
 
+```js
+var walk = require('acorn-node/walk')
+```
+
+The Acorn syntax tree walker. Comes preconfigured for the syntax plugins if necessary.
+See the [acorn documentation](https://github.com/acornjs/acorn#distwalkjs) for details.
+
 ## License
 
 [Apache-2.0](LICENSE.md)
