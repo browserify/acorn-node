@@ -8,9 +8,7 @@ function mapOptions (opts) {
     allowHashBang: true,
     allowReturnOutsideFunction: true
   }, opts)
-  opts.plugins = xtend(opts.plugins, {
-    objectSpread: true
-  })
+  opts.plugins = xtend(opts.plugins, {})
   return opts
 }
 
@@ -25,5 +23,3 @@ module.exports = exports = xtend(acorn, {
     return acorn.tokenizer(src, mapOptions(opts))
   }
 })
-
-require('./lib/object-spread')(exports)

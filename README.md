@@ -29,7 +29,7 @@ var acorn = require('acorn-node')
 
 The API is the same as [acorn](https://github.com/acornjs/acorn), but the following syntax features are enabled by default:
 
- - Object rest spread (via [acorn5-object-spread](https://github.com/adrianheine/acorn5-object-spread))
+ - None right now.
 
 And the following options have different defaults from acorn, to match Node modules:
 
