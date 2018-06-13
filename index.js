@@ -4,7 +4,7 @@ var xtend = require('xtend')
 function mapOptions (opts) {
   if (!opts) opts = {}
   opts = xtend({
-    ecmaVersion: 9,
+    ecmaVersion: 2019,
     allowHashBang: true,
     allowReturnOutsideFunction: true
   }, opts)
