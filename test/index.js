@@ -66,7 +66,7 @@ test('supports optional catch', function (t) {
   t.end()
 })
 
-test('supports bigint', function (t) {
+test.skip('supports bigint', function (t) {
   t.doesNotThrow(function () {
     acorn.parse('50n ** 50n')
   })
