@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.5.0
+
+ * Add tests for async iteration, optional catch binding, import.meta,
+   dynamic import, bigint (currently unsupported).
+ * Add import.meta support. (`sourceType: 'module'` only)
+ * Add dynamic import support. (`sourceType: 'module'` only)
+ * Fix optional catch binding support in the walker.
+
 ## 1.4.0
 
  * Upgrade acorn to 5.6, which supports optional catch bindings and other
