@@ -2,12 +2,7 @@ var xtend = require('xtend')
 var walk = require('acorn/dist/walk')
 
 var base = xtend(walk.base, {
-  Import: function () {},
-  // pending https://github.com/acornjs/acorn/pull/705
-  CatchClause: function (node, st, c) {
-    if (node.param) c(node.param, st, 'Pattern')
-    c(node.body, st, 'ScopeBody')
-  }
+  Import: function () {}
 })
 
 function simple (node, visitors, baseVisitor, state, override) {
