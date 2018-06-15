@@ -8,7 +8,8 @@ function mapOptions (opts) {
     allowHashBang: true,
     allowReturnOutsideFunction: true,
     plugins: {
-      dynamicImport: opts.sourceType === 'module'
+      dynamicImport: opts.sourceType === 'module',
+      importMeta: opts.sourceType === 'module'
     }
   }, opts)
   opts.plugins = xtend(opts.plugins, {})
@@ -28,3 +29,4 @@ module.exports = exports = xtend(acorn, {
 })
 
 require('acorn-dynamic-import/lib/inject').default(exports)
+require('./lib/import-meta')(exports)
