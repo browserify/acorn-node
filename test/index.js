@@ -1,5 +1,6 @@
 var test = require('tape')
 var acorn = require('../')
+var walk = require('../walk')
 var baseAcorn = require('acorn')
 
 test('parses object spread syntax', function (t) {
@@ -82,6 +83,23 @@ test('supports import.meta with sourceType: module', function (t) {
 test('supports dynamic import() with sourceType: module', function (t) {
   t.doesNotThrow(function () {
     acorn.parse('import("./whatever.mjs")', { sourceType: 'module' })
+  })
+  t.end()
+})
+
+test('walk supports plugin syntax', function (t) {
+  var ast = acorn.parse(
+    'async function* a() { try { await import(xyz); } catch { for await (x of null) {} } yield import.meta.url }',
+    { sourceType: 'module' }
+  )
+  t.plan(2)
+  walk.simple(ast, {
+    Import () {
+      t.pass('import()')
+    },
+    MetaProperty () {
+      t.pass('import.meta')
+    }
   })
   t.end()
 })
