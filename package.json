@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "acorn": "^5.6.2",
+    "acorn-dynamic-import": "^3.0.0",
     "xtend": "^4.0.1"
   },
   "devDependencies": {

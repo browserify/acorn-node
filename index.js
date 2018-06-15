@@ -6,7 +6,10 @@ function mapOptions (opts) {
   opts = xtend({
     ecmaVersion: 2019,
     allowHashBang: true,
-    allowReturnOutsideFunction: true
+    allowReturnOutsideFunction: true,
+    plugins: {
+      dynamicImport: opts.sourceType === 'module'
+    }
   }, opts)
   opts.plugins = xtend(opts.plugins, {})
   return opts
@@ -23,3 +26,5 @@ module.exports = exports = xtend(acorn, {
     return acorn.tokenizer(src, mapOptions(opts))
   }
 })
+
+require('acorn-dynamic-import/lib/inject').default(exports)
