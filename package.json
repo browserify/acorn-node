@@ -13,9 +13,9 @@
   },
   "devDependencies": {
     "acorn-import-meta": "^0.2.1",
-    "buble": "^0.18.0",
+    "buble": "^0.19.3",
     "mkdirp": "^0.5.1",
-    "standard": "^10.0.3",
+    "standard": "^11.0.1",
     "tape": "^4.8.0"
   },
   "homepage": "https://github.com/browserify/acorn-node",
