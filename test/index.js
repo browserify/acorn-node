@@ -43,3 +43,45 @@ test('allows top level return by default', function (t) {
   })
   t.end()
 })
+
+test('supports async generators', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('async function* a () { await x; yield 1 }')
+  })
+  t.end()
+})
+
+test('supports async iteration', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('async function l (y) { for await (const x of y) {} }')
+  })
+  t.end()
+})
+
+test('supports optional catch', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('try { throw null } catch {}')
+  })
+  t.end()
+})
+
+test('supports bigint', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('50n ** 50n')
+  })
+  t.end()
+})
+
+test('supports import.meta with sourceType: module', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('console.log(import.meta.url)', { sourceType: 'module' })
+  })
+  t.end()
+})
+
+test('supports dynamic import() with sourceType: module', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('import("./whatever.mjs")', { sourceType: 'module' })
+  })
+  t.end()
+})
