@@ -94,10 +94,10 @@ test('walk supports plugin syntax', function (t) {
   )
   t.plan(2)
   walk.simple(ast, {
-    Import () {
+    Import: function () {
       t.pass('import()')
     },
-    MetaProperty () {
+    MetaProperty: function () {
       t.pass('import.meta')
     }
   })
