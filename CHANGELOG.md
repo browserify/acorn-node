@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.5.2
+
+ * Upgrade acorn to support optional catch binding in the AST walker.
+
 ## 1.5.1
 
  * Fix tests on Node <= 0.12.
