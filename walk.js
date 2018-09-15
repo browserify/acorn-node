@@ -1,5 +1,5 @@
 var xtend = require('xtend')
-var walk = require('acorn/dist/walk')
+var walk = require('acorn-walk')
 
 var base = xtend(walk.base, {
   Import: function () {}
