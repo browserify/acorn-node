@@ -13,7 +13,7 @@
     "xtend": "^4.0.1"
   },
   "devDependencies": {
-    "acorn-import-meta": "^0.2.1",
+    "acorn-import-meta": "^0.3.0",
     "buble": "^0.19.3",
     "mkdirp": "^0.5.1",
     "standard": "^11.0.1",
