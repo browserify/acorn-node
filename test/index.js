@@ -17,7 +17,7 @@ test('parses object spread syntax', function (t) {
 
 test('does not change main acorn module', function (t) {
   t.throws(function () {
-    baseAcorn.parse('var a = { ...b }')
+    baseAcorn.parse('var a = 10n')
   })
   t.end()
 })
@@ -66,7 +66,7 @@ test('supports optional catch', function (t) {
   t.end()
 })
 
-test.skip('supports bigint', function (t) {
+test('supports bigint', function (t) {
   t.doesNotThrow(function () {
     acorn.parse('50n ** 50n')
   })
