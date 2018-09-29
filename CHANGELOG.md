@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.6.0
+
+ * Upgrade acorn to v6.
+ * Add bigint support.
+
 ## 1.5.2
 
  * Upgrade acorn to support optional catch binding in the AST walker.
