@@ -1,5 +1,4 @@
 var acorn = require('acorn')
-var xtend = require('xtend')
 
 var CJSParser = acorn.Parser
   .extend(require('./lib/bigint'))
@@ -9,7 +8,7 @@ var ESModulesParser = CJSParser
 
 function mapOptions (opts) {
   if (!opts) opts = {}
-  return xtend({
+  return Object.assign({
     ecmaVersion: 2019,
     allowHashBang: true,
     allowReturnOutsideFunction: true
@@ -21,7 +20,7 @@ function getParser (opts) {
   return opts.sourceType === 'module' ? ESModulesParser : CJSParser
 }
 
-module.exports = exports = xtend(acorn, {
+module.exports = exports = Object.assign({}, acorn, {
   parse: function parse (src, opts) {
     return getParser(opts).parse(src, mapOptions(opts))
   },
