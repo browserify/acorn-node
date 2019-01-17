@@ -9,8 +9,7 @@
   "dependencies": {
     "acorn": "^6.0.2",
     "acorn-dynamic-import": "^4.0.0",
-    "acorn-walk": "^6.1.0",
-    "xtend": "^4.0.1"
+    "acorn-walk": "^6.1.0"
   },
   "devDependencies": {
     "acorn-bigint": "^0.3.1",
