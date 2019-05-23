@@ -7,6 +7,7 @@ var CJSParser = acorn.Parser
   .extend(require('./lib/static-class-features'))
   .extend(require('acorn-dynamic-import').default)
 var ESModulesParser = CJSParser
+  .extend(require('./lib/export-ns-from'))
   .extend(require('./lib/import-meta'))
 
 function mapOptions (opts) {

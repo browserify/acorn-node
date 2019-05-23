@@ -24,6 +24,7 @@ function privateClassElements (str) {
 
 compile('acorn-bigint', './lib/bigint/index.js')
 compile('acorn-import-meta', './lib/import-meta/index.js')
+compile('acorn-export-ns-from', './lib/export-ns-from/index.js')
 compile('acorn-class-fields', './lib/class-fields/index.js', privateClassElements)
 compile('acorn-static-class-features', './lib/static-class-features/index.js', privateClassElements)
 compile('acorn-private-class-elements', './lib/private-class-elements/index.js', function (str) {
