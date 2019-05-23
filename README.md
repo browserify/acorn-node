@@ -10,7 +10,7 @@ It also includes versions of the plugins compiled with [Bublé](https://github.c
 
 [npm-image]: https://img.shields.io/npm/v/acorn-node.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/acorn-node
-[travis-image]: https://img.shields.io/travis/browserify/acorn-node.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/browserify/acorn-node/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/browserify/acorn-node
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
