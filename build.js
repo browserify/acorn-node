@@ -18,10 +18,14 @@ function compile (name, output, fix) {
   fs.writeFileSync(path.join(__dirname, output), HEADER + result.code, 'utf8')
 }
 
+function privateClassElements (str) {
+  return str.replace('acorn-private-class-elements', '../acorn-private-class-elements')
+}
+
 compile('acorn-bigint', './lib/bigint/index.js')
 compile('acorn-import-meta', './lib/import-meta/index.js')
-compile('acorn-class-fields', './lib/class-fields/index.js')
-compile('acorn-static-class-features', './lib/static-class-features/index.js')
-compile('acorn-private-class-elements', './lib/node_modules/acorn-private-class-elements/index.js', function (str) {
+compile('acorn-class-fields', './lib/class-fields/index.js', privateClassElements)
+compile('acorn-static-class-features', './lib/static-class-features/index.js', privateClassElements)
+compile('acorn-private-class-elements', './lib/acorn-private-class-elements/index.js', function (str) {
   return str.replace('class extends Parser', 'class Parser_ extends Parser')
 })
