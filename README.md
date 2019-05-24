@@ -29,9 +29,12 @@ var acorn = require('acorn-node')
 
 The API is the same as [acorn](https://github.com/acornjs/acorn), but the following syntax features are enabled by default:
 
- - Bigint syntax (via [acorn-bigint](https://github.com/acornjs/acorn-bigint]))
+ - Bigint syntax (via [acorn-bigint](https://github.com/acornjs/acorn-bigint]), MIT)
+ - Public and private class instance fields (via [acorn-class-fields](https://github.com/acornjs/acorn-class-fields), MIT)
+ - Public and private class static fields (via [acorn-static-class-features](https://github.com/acornjs/acorn-static-class-features), MIT)
  - Dynamic `import()` (via [acorn-dynamic-import](https://github.com/kesne/acorn-dynamic-import))
- - The `import.meta` property (via [acorn-import-meta](https://github.com/acornjs/acorn-import-meta))
+ - The `import.meta` property (via [acorn-import-meta](https://github.com/acornjs/acorn-import-meta), MIT)
+ - `export * as ns from` syntax (via [acorn-export-ns-from](https://github.com/acornjs/acorn-export-ns-from), MIT)
 
 And the following options have different defaults from acorn, to match Node modules:
 

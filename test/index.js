@@ -94,6 +94,41 @@ test('supports dynamic import() with sourceType: script', function (t) {
   t.end()
 })
 
+test('supports class instance properties', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('class X { x = y }', { sourceType: 'script' })
+  })
+  t.end()
+})
+
+test('supports private class instance properties', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('class X { #x = y }', { sourceType: 'script' })
+  })
+  t.end()
+})
+
+test('supports class static properties', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('class X { static x = y }', { sourceType: 'script' })
+  })
+  t.end()
+})
+
+test('supports private class static properties', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('class X { static #x = y }', { sourceType: 'script' })
+  })
+  t.end()
+})
+
+test('supports namespace export syntax with sourceType: module', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('export * as x from "./x.mjs";', { sourceType: 'module' })
+  })
+  t.end()
+})
+
 test('walk supports plugin syntax', function (t) {
   var ast = acorn.parse(
     'async function* a() { try { await import(xyz); } catch { for await (x of null) {} } yield import.meta.url }',
