@@ -8,15 +8,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
  * Add class instance fields support:
    ```js
    class X {
-     public = 1;
-     #private = 2;
+     pub = 1;
+     #priv = 2;
    }
    ```
  * Add class static fields support:
    ```js
    class X {
-     static public = 1;
-     static #private = 2;
+     static pub = 1;
+     static #priv = 2;
    }
    ```
  * Add `export * as ns` support when `sourceType` is 'module':
