@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.7.0
+ * Add class instance fields support:
+   ```js
+   class X {
+     public = 1;
+     #private = 2;
+   }
+   ```
+ * Add class static fields support:
+   ```js
+   class X {
+     static public = 1;
+     static #private = 2;
+   }
+   ```
+ * Add `export * as ns` support when `sourceType` is 'module':
+   ```js
+   export * as ns from './ns.mjs';
+   ```
+
 ## 1.6.2
 
  * Allow dynamic `import()` in scripts.
