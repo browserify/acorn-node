@@ -22,6 +22,7 @@ function privateClassElements (str) {
   return str.replace('acorn-private-class-elements', '../private-class-elements')
 }
 
+compile('acorn-bigint', './lib/bigint/index.js')
 compile('acorn-import-meta', './lib/import-meta/index.js')
 compile('acorn-export-ns-from', './lib/export-ns-from/index.js')
 compile('acorn-class-fields', './lib/class-fields/index.js', privateClassElements)

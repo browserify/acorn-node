@@ -2,6 +2,7 @@ var acorn = require('acorn')
 var xtend = require('xtend')
 
 var CJSParser = acorn.Parser
+  .extend(require('./lib/bigint'))
   .extend(require('./lib/class-fields'))
   .extend(require('./lib/static-class-features'))
 var ESModulesParser = CJSParser
