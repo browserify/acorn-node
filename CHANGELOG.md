@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.8.2
+ * Revert a breaking change in import.meta parsing.
+
 ## 1.8.1
  * Fix crash in compiled private-class-elements code.
 
