@@ -5,7 +5,6 @@ var CJSParser = acorn.Parser
   .extend(require('./lib/bigint'))
   .extend(require('./lib/class-fields'))
   .extend(require('./lib/static-class-features'))
-  .extend(require('acorn-dynamic-import').default)
 var ESModulesParser = CJSParser
   .extend(require('./lib/export-ns-from'))
   .extend(require('./lib/import-meta'))
@@ -13,7 +12,7 @@ var ESModulesParser = CJSParser
 function mapOptions (opts) {
   if (!opts) opts = {}
   return xtend({
-    ecmaVersion: 2019,
+    ecmaVersion: 2020,
     allowHashBang: true,
     allowReturnOutsideFunction: true
   }, opts)
