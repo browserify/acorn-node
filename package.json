@@ -7,19 +7,18 @@
     "url": "https://github.com/browserify/acorn-node/issues"
   },
   "dependencies": {
-    "acorn": "^6.1.1",
-    "acorn-dynamic-import": "^4.0.0",
-    "acorn-walk": "^6.1.1",
-    "xtend": "^4.0.1"
+    "acorn": "^7.0.0",
+    "acorn-walk": "^7.0.0",
+    "xtend": "^4.0.2"
   },
   "devDependencies": {
-    "acorn-bigint": "^0.3.1",
+    "acorn-bigint": "^0.4.0",
     "acorn-class-fields": "^0.3.1",
     "acorn-export-ns-from": "^0.1.0",
-    "acorn-import-meta": "^0.3.0",
+    "acorn-import-meta": "^1.0.0",
     "acorn-private-class-elements": "^0.1.1",
     "acorn-static-class-features": "^0.2.0",
-    "buble": "^0.19.7",
+    "buble": "^0.19.8",
     "mkdirp": "^0.5.1",
     "standard": "^13.1.0",
     "tape": "^4.11.0"
