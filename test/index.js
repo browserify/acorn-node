@@ -84,6 +84,9 @@ test('supports import.meta with sourceType: module', function (t) {
   t.doesNotThrow(function () {
     acorn.parse('console.log(import.meta.url)', { sourceType: 'module' })
   })
+  t.throws(function () {
+    acorn.parse('console.log(import.m\\u0065ta.ul)', { sourceType: 'module' })
+  }, /must not contain escape sequences/)
   t.end()
 })
 
