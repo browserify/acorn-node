@@ -23,6 +23,8 @@ function privateClassElements (str) {
 }
 
 compile('acorn-bigint', './lib/bigint/index.js')
+compile('acorn-numeric-separator', './lib/numeric-separator/index.js')
+compile('acorn-dynamic-import', './lib/dynamic-import/index.js')
 compile('acorn-import-meta', './lib/import-meta/index.js')
 compile('acorn-export-ns-from', './lib/export-ns-from/index.js')
 compile('acorn-class-fields', './lib/class-fields/index.js', privateClassElements)
