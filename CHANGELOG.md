@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.8.0
+ * Upgrade acorn to v7.
+
+   For backwards compatibility, `acorn-node` still uses the `Import` node type for dynamic imports, _NOT_ `ImportExpression` like acorn v7 and estree.
+ * Add numeric separator support:
+   ```js
+   var a = 10_000_000_000_000_000_000_000_000n;
+   ```
+
 ## 1.7.0
  * Add class instance fields support:
    ```js
