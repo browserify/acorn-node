@@ -58,7 +58,6 @@ The files in lib/ are generated from other packages:
 
 - lib/bigint: [acorn-bigint](https://github.com/acornjs/acorn-bigint]), MIT
 - lib/class-private-elements: [acorn-class-private-elements](https://github.com/acornjs/acorn-class-private-elements), MIT
-- lib/dynamic-import: [acorn-dynamic-import](https://github.com/acornjs/acorn-dynamic-import), MIT
 - lib/export-ns-from: [acorn-export-ns-from](https://github.com/acornjs/acorn-export-ns-from), MIT
 - lib/import-meta: [acorn-import-meta](https://github.com/acornjs/acorn-import-meta), MIT
 - lib/numeric-separator: [acorn-numeric-separator](https://github.com/acornjs/acorn-numeric-separator]), MIT
