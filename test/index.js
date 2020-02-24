@@ -84,6 +84,9 @@ test('supports import.meta with sourceType: module', function (t) {
   t.doesNotThrow(function () {
     acorn.parse('console.log(import.meta.url)', { sourceType: 'module' })
   })
+  t.throws(function () {
+    acorn.parse('console.log(import.m\\u0065ta.ul)', { sourceType: 'module' })
+  }, /must not contain escape sequences/)
   t.end()
 })
 
@@ -143,7 +146,7 @@ test('walk supports plugin syntax', function (t) {
   )
   t.plan(2)
   walk.simple(ast, {
-    Import: function () {
+    ImportExpression: function () {
       t.pass('import()')
     },
     MetaProperty: function () {

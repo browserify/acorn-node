@@ -6,7 +6,6 @@ var CJSParser = acorn.Parser
   .extend(require('./lib/class-fields'))
   .extend(require('./lib/static-class-features'))
   .extend(require('./lib/numeric-separator'))
-  .extend(require('./lib/dynamic-import').default)
 var ESModulesParser = CJSParser
   .extend(require('./lib/export-ns-from'))
   .extend(require('./lib/import-meta'))
