@@ -1,7 +1,7 @@
 {
   "name": "acorn-node",
   "description": "the acorn javascript parser, preloaded with plugins for syntax parity with recent node versions",
-  "version": "1.8.2",
+  "version": "2.0.0",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/browserify/acorn-node/issues"
