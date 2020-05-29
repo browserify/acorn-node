@@ -30,6 +30,7 @@ compile('acorn-class-fields', './lib/class-fields/index.js', privateClassElement
 compile('acorn-static-class-features', './lib/static-class-features/index.js', privateClassElements)
 compile('acorn-private-class-elements', './lib/private-class-elements/index.js', function (str) {
   return str.replace('class extends Parser', 'class Parser_ extends Parser')
+    .replace('new Parser', 'new Parser_')
     // it also works with v7
     .replace('if (acorn.version.indexOf("6.") != 0 || acorn.version.indexOf("6.0.") == 0) {', 'if (false) {')
 })
