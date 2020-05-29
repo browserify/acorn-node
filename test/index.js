@@ -125,6 +125,13 @@ test('supports class static properties', function (t) {
   t.end()
 })
 
+test('supports class function named static', function (t) {
+  t.doesNotThrow(function () {
+    acorn.parse('class X { static () {} }', { sourceType: 'script' })
+  })
+  t.end()
+})
+
 test('supports private class static properties', function (t) {
   t.doesNotThrow(function () {
     acorn.parse('class X { static #x = y }', { sourceType: 'script' })
