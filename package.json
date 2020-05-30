@@ -7,22 +7,25 @@
     "url": "https://github.com/browserify/acorn-node/issues"
   },
   "dependencies": {
-    "acorn": "^7.0.0",
-    "acorn-walk": "^7.0.0",
+    "acorn": "^7.2.0",
+    "acorn-walk": "^7.1.1",
     "xtend": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
     "acorn-bigint": "^0.4.0",
-    "acorn-class-fields": "^0.3.1",
-    "acorn-export-ns-from": "^0.1.0",
-    "acorn-import-meta": "^1.0.0",
-    "acorn-numeric-separator": "^0.3.0",
-    "acorn-private-class-elements": "^0.1.1",
-    "acorn-static-class-features": "^0.2.0",
-    "buble": "^0.19.8",
-    "mkdirp": "^0.5.1",
+    "acorn-class-fields": "^0.3.4",
+    "acorn-export-ns-from": "^0.2.0",
+    "acorn-import-meta": "^1.1.0",
+    "acorn-numeric-separator": "^0.3.2",
+    "acorn-private-class-elements": "^0.2.5",
+    "acorn-static-class-features": "^0.2.2",
+    "mkdirp": "^0.5.5",
+    "npm-run-all": "^4.1.5",
     "standard": "^13.1.0",
-    "tape": "^4.11.0"
+    "tape": "^4.13.3"
   },
   "homepage": "https://github.com/browserify/acorn-node",
   "keywords": [
@@ -40,11 +43,18 @@
   "scripts": {
     "test": "standard && node test/index.js",
     "prepublishOnly": "npm run build",
-    "build": "node build.js"
+    "build:acorn-bigint": "babel node_modules/acorn-bigint --out-dir lib/acorn-bigint",
+    "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator --out-dir lib/acorn-numeric-separator",
+    "build:acorn-import-meta": "babel node_modules/acorn-import-meta --out-dir lib/acorn-import-meta",
+    "build:acorn-export-ns-from": "babel node_modules/acorn-export-ns-from --out-dir lib/acorn-export-ns-from",
+    "build:acorn-class-fields": "babel node_modules/acorn-class-fields --out-dir lib/acorn-class-fields",
+    "build:acorn-static-class-features": "babel node_modules/acorn-static-class-features --out-dir lib/acorn-static-class-features",
+    "build:acorn-private-class-elements": "babel node_modules/acorn-private-class-elements --out-dir lib/acorn-private-class-elements",
+    "build": "npm-run-all --parallel build:*"
   },
   "standard": {
     "ignore": [
-      "lib/*/*.js"
+      "lib/**/*"
     ]
   }
 }

@@ -2,13 +2,13 @@ var acorn = require('acorn')
 var xtend = require('xtend')
 
 var CJSParser = acorn.Parser
-  .extend(require('./lib/bigint'))
-  .extend(require('./lib/class-fields'))
-  .extend(require('./lib/static-class-features'))
-  .extend(require('./lib/numeric-separator'))
+  .extend(require('./lib/acorn-bigint'))
+  .extend(require('./lib/acorn-class-fields'))
+  .extend(require('./lib/acorn-static-class-features'))
+  .extend(require('./lib/acorn-numeric-separator'))
 var ESModulesParser = CJSParser
-  .extend(require('./lib/export-ns-from'))
-  .extend(require('./lib/import-meta'))
+  .extend(require('./lib/acorn-export-ns-from'))
+  .extend(require('./lib/acorn-import-meta'))
 
 function mapOptions (opts) {
   if (!opts) opts = {}
