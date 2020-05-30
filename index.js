@@ -3,9 +3,9 @@ var xtend = require('xtend')
 var setPrototypeOf = require('setprototypeof')
 
 var CJSParser = acorn.Parser
-  .extend(require('./lib/class-fields'))
-  .extend(require('./lib/static-class-features'))
-  .extend(require('./lib/numeric-separator'))
+  .extend(require('./lib/acorn-class-fields'))
+  .extend(require('./lib/acorn-static-class-features'))
+  .extend(require('./lib/acorn-numeric-separator'))
   .extend(defaultOptionsPlugin)
 var ESModulesParser = CJSParser
 
