@@ -54,11 +54,11 @@ See the [acorn documentation](https://github.com/acornjs/acorn#distwalkjs) for d
 
 The files in the repo root and the ./test folder are licensed as [Apache-2.0](LICENSE.md).
 
-The files in lib/ are generated from other packages:
+In the published npm package, the files in lib/ are generated from these sources:
 
-- lib/bigint: [acorn-bigint](https://github.com/acornjs/acorn-bigint]), MIT
-- lib/class-private-elements: [acorn-class-private-elements](https://github.com/acornjs/acorn-class-private-elements), MIT
-- lib/export-ns-from: [acorn-export-ns-from](https://github.com/acornjs/acorn-export-ns-from), MIT
-- lib/import-meta: [acorn-import-meta](https://github.com/acornjs/acorn-import-meta), MIT
-- lib/numeric-separator: [acorn-numeric-separator](https://github.com/acornjs/acorn-numeric-separator]), MIT
-- lib/static-class-features: [acorn-static-class-features](https://github.com/acornjs/acorn-static-class-features), MIT
+- lib/acorn-bigint: [acorn-bigint](https://github.com/acornjs/acorn-bigint]), MIT License
+- lib/acorn-class-private-elements: [acorn-class-private-elements](https://github.com/acornjs/acorn-class-private-elements), MIT License
+- lib/acorn-export-ns-from: [acorn-export-ns-from](https://github.com/acornjs/acorn-export-ns-from), MIT License
+- lib/acorn-import-meta: [acorn-import-meta](https://github.com/acornjs/acorn-import-meta), MIT License
+- lib/acorn-numeric-separator: [acorn-numeric-separator](https://github.com/acornjs/acorn-numeric-separator]), MIT License
+- lib/acorn-static-class-features: [acorn-static-class-features](https://github.com/acornjs/acorn-static-class-features), MIT License
