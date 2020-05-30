@@ -36,8 +36,8 @@
     "url": "https://github.com/browserify/acorn-node.git"
   },
   "scripts": {
-    "test": "standard && node test/index.js",
-    "prepublishOnly": "npm run build",
+    "test": "standard && node test",
+    "prepare": "npm run build && node test",
     "build": "node build.js"
   },
   "standard": {
