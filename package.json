@@ -43,13 +43,13 @@
   "scripts": {
     "test": "standard && node test",
     "prepare": "npm run build && node test",
-    "build:acorn-bigint": "babel node_modules/acorn-bigint --out-dir lib/acorn-bigint",
-    "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator --out-dir lib/acorn-numeric-separator",
-    "build:acorn-import-meta": "babel node_modules/acorn-import-meta --out-dir lib/acorn-import-meta",
-    "build:acorn-export-ns-from": "babel node_modules/acorn-export-ns-from --out-dir lib/acorn-export-ns-from",
-    "build:acorn-class-fields": "babel node_modules/acorn-class-fields --out-dir lib/acorn-class-fields",
-    "build:acorn-static-class-features": "babel node_modules/acorn-static-class-features --out-dir lib/acorn-static-class-features",
-    "build:acorn-private-class-elements": "babel node_modules/acorn-private-class-elements --out-dir lib/acorn-private-class-elements",
+    "build:acorn-bigint": "babel node_modules/acorn-bigint/index.js --out-dir lib/acorn-bigint",
+    "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator/index.js --out-dir lib/acorn-numeric-separator",
+    "build:acorn-import-meta": "babel node_modules/acorn-import-meta/index.js --out-dir lib/acorn-import-meta",
+    "build:acorn-export-ns-from": "babel node_modules/acorn-export-ns-from/index.js --out-dir lib/acorn-export-ns-from",
+    "build:acorn-class-fields": "babel node_modules/acorn-class-fields/index.js --out-dir lib/acorn-class-fields",
+    "build:acorn-static-class-features": "babel node_modules/acorn-static-class-features/index.js --out-dir lib/acorn-static-class-features",
+    "build:acorn-private-class-elements": "babel node_modules/acorn-private-class-elements/index.js --out-dir lib/acorn-private-class-elements",
     "build": "npm-run-all --parallel build:*"
   },
   "standard": {
