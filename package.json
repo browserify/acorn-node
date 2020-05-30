@@ -1,7 +1,7 @@
 {
   "name": "acorn-node",
   "description": "the acorn javascript parser, preloaded with plugins for syntax parity with recent node versions",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/browserify/acorn-node/issues"
@@ -14,10 +14,10 @@
   "devDependencies": {
     "acorn-bigint": "^0.4.0",
     "acorn-class-fields": "^0.3.1",
-    "acorn-export-ns-from": "^0.1.0",
+    "acorn-export-ns-from": "^0.2.0",
     "acorn-import-meta": "^1.0.0",
     "acorn-numeric-separator": "^0.3.0",
-    "acorn-private-class-elements": "^0.1.1",
+    "acorn-private-class-elements": "^0.2.5",
     "acorn-static-class-features": "^0.2.0",
     "buble": "^0.19.8",
     "mkdirp": "^0.5.1",
