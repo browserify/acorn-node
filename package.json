@@ -41,8 +41,8 @@
     "url": "https://github.com/browserify/acorn-node.git"
   },
   "scripts": {
-    "test": "standard && node test/index.js",
-    "prepublishOnly": "npm run build",
+    "test": "standard && node test",
+    "prepare": "npm run build && node test",
     "build:acorn-bigint": "babel node_modules/acorn-bigint --out-dir lib/acorn-bigint",
     "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator --out-dir lib/acorn-numeric-separator",
     "build:acorn-import-meta": "babel node_modules/acorn-import-meta --out-dir lib/acorn-import-meta",
