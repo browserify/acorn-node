@@ -1,22 +1,32 @@
 language: node_js
-node_js:
-  - '12'
-  - '11'
-  - '10'
-  - '9'
-  - '8'
-  - '6'
-  - '4'
-  - '0.12'
-  - '0.10'
-  - '0.8'
-  - '0.6'
-before_install:
-  - 'nvm install-latest-npm'
-install:
-  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.6" ] || [ "${TRAVIS_NODE_VERSION}" = "0.9" ]; then nvm install --latest-npm 0.8 && npm install && nvm use "${TRAVIS_NODE_VERSION}"; else npm install; fi;'
-sudo: false
-matrix:
+
+.install_older_node: &install_older_node
+  - nvm install --latest-npm 12
+  - npm install
+  - nvm use "${TRAVIS_NODE_VERSION}"
+
+jobs:
   fast_finish: true
   allow_failures:
-    - node_js: "0.6"
+    - node_js: 0.6
+
+  include:
+    - node_js: '14'
+    - node_js: '13'
+    - node_js: '12'
+    - node_js: '11'
+    - node_js: '10'
+    - node_js: '9'
+    - node_js: '8'
+    - node_js: '6'
+      install: *install_older_node
+    - node_js: '4'
+      install: *install_older_node
+    - node_js: '0.12'
+      install: *install_older_node
+    - node_js: '0.10'
+      install: *install_older_node
+    - node_js: '0.8'
+      install: *install_older_node
+    - node_js: '0.6'
+      install: *install_older_node
