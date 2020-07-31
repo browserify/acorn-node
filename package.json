@@ -45,6 +45,7 @@
     "build:acorn-class-fields": "babel node_modules/acorn-class-fields --out-dir lib/acorn-class-fields",
     "build:acorn-static-class-features": "babel node_modules/acorn-static-class-features --out-dir lib/acorn-static-class-features",
     "build:acorn-private-class-elements": "babel node_modules/acorn-private-class-elements --out-dir lib/acorn-private-class-elements",
+    "build:self": "babel src --out-dir .",
     "build": "npm-run-all --parallel build:*"
   },
   "standard": {

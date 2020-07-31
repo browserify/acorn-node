@@ -1,8 +1,7 @@
 var acorn = require('acorn')
-var xtend = require('xtend')
-var setPrototypeOf = require('setprototypeof')
 
 var CJSParser = acorn.Parser
+  // Required paths should be relative to the package root, because Babel outputs this file there.
   .extend(require('./lib/acorn-class-fields'))
   .extend(require('./lib/acorn-static-class-features'))
   .extend(require('./lib/acorn-numeric-separator'))
@@ -11,20 +10,20 @@ var ESModulesParser = CJSParser
 
 function mapOptions (opts) {
   if (!opts) opts = {}
-  return xtend({
+  return {
     ecmaVersion: 2020,
     allowHashBang: true,
-    allowReturnOutsideFunction: true
-  }, opts)
+    allowReturnOutsideFunction: true,
+    ...opts
+  }
 }
 
 function defaultOptionsPlugin (P) {
-  function DefaultOptionsParser (opts, src) {
-    P.call(this, mapOptions(opts), src)
+  return class DefaultOptionsParser extends P {
+    constructor(opts, src) {
+      super(mapOptions(opts), src)
+    }
   }
-  setPrototypeOf(DefaultOptionsParser, P)
-  DefaultOptionsParser.prototype = P.prototype
-  return DefaultOptionsParser
 }
 
 function getParser (opts) {
@@ -32,7 +31,8 @@ function getParser (opts) {
   return opts.sourceType === 'module' ? ESModulesParser : CJSParser
 }
 
-module.exports = exports = xtend(acorn, {
+module.exports = exports = {
+  ...acorn,
   Parser: CJSParser,
   ESModulesParser: ESModulesParser,
 
@@ -45,4 +45,4 @@ module.exports = exports = xtend(acorn, {
   tokenizer: function tokenizer (src, opts) {
     return getParser(opts).tokenizer(src, opts)
   }
-})
+}

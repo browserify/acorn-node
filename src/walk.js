@@ -1,7 +1,8 @@
-var xtend = require('xtend')
 var walk = require('acorn-walk')
 
-var base = xtend(walk.base)
+var base = {
+  ...walk.base
+}
 
 function simple (node, visitors, baseVisitor, state, override) {
   return walk.simple(node, visitors, baseVisitor || base, state, override)
