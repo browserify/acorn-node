@@ -41,11 +41,11 @@
   "scripts": {
     "test": "standard && node test",
     "prepare": "npm run build && node test",
-    "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator --out-dir lib/acorn-numeric-separator",
-    "build:acorn-class-fields": "babel node_modules/acorn-class-fields --out-dir lib/acorn-class-fields",
-    "build:acorn-static-class-features": "babel node_modules/acorn-static-class-features --out-dir lib/acorn-static-class-features",
-    "build:acorn-private-class-elements": "babel node_modules/acorn-private-class-elements --out-dir lib/acorn-private-class-elements",
-    "build:self": "babel src --out-dir .",
+    "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator --out-dir lib/acorn-numeric-separator --verbose",
+    "build:acorn-class-fields": "babel node_modules/acorn-class-fields --out-dir lib/acorn-class-fields --verbose",
+    "build:acorn-static-class-features": "babel node_modules/acorn-static-class-features --out-dir lib/acorn-static-class-features --verbose",
+    "build:acorn-private-class-elements": "babel node_modules/acorn-private-class-elements --out-dir lib/acorn-private-class-elements --verbose",
+    "build:self": "babel src --out-dir . --verbose",
     "build": "npm-run-all --parallel build:*"
   },
   "standard": {
