@@ -1,11 +1,13 @@
 var acorn = require('acorn')
 var xtend = require('xtend')
+var setPrototypeOf = require('setprototypeof')
 
 var CJSParser = acorn.Parser
   .extend(require('./lib/bigint'))
   .extend(require('./lib/class-fields'))
   .extend(require('./lib/static-class-features'))
   .extend(require('./lib/numeric-separator'))
+  .extend(defaultOptionsPlugin)
 var ESModulesParser = CJSParser
   .extend(require('./lib/export-ns-from'))
   .extend(require('./lib/import-meta'))
@@ -19,19 +21,31 @@ function mapOptions (opts) {
   }, opts)
 }
 
+function defaultOptionsPlugin (P) {
+  function DefaultOptionsParser (opts, src) {
+    P.call(this, mapOptions(opts), src)
+  }
+  setPrototypeOf(DefaultOptionsParser, P)
+  DefaultOptionsParser.prototype = P.prototype
+  return DefaultOptionsParser
+}
+
 function getParser (opts) {
   if (!opts) opts = {}
   return opts.sourceType === 'module' ? ESModulesParser : CJSParser
 }
 
 module.exports = exports = xtend(acorn, {
+  Parser: CJSParser,
+  ESModulesParser: ESModulesParser,
+
   parse: function parse (src, opts) {
-    return getParser(opts).parse(src, mapOptions(opts))
+    return getParser(opts).parse(src, opts)
   },
   parseExpressionAt: function parseExpressionAt (src, offset, opts) {
-    return getParser(opts).parseExpressionAt(src, offset, mapOptions(opts))
+    return getParser(opts).parseExpressionAt(src, offset, opts)
   },
   tokenizer: function tokenizer (src, opts) {
-    return getParser(opts).tokenizer(src, mapOptions(opts))
+    return getParser(opts).tokenizer(src, opts)
   }
 })
