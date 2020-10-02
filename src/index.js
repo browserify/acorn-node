@@ -20,7 +20,7 @@ function mapOptions (opts) {
 
 function defaultOptionsPlugin (P) {
   return class DefaultOptionsParser extends P {
-    constructor(opts, src) {
+    constructor (opts, src) {
       super(mapOptions(opts), src)
     }
   }
