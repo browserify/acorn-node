@@ -35,7 +35,7 @@ The API is the same as [acorn](https://github.com/acornjs/acorn), but the follow
 
 And the following options have different defaults from acorn, to match Node modules:
 
- - `ecmaVersion: 2020`
+ - `ecmaVersion: 2021`
  - `allowHashBang: true`
  - `allowReturnOutsideFunction: true`
 
