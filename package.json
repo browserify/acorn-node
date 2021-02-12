@@ -39,7 +39,8 @@
     "url": "https://github.com/browserify/acorn-node.git"
   },
   "scripts": {
-    "test": "standard && node test",
+    "lint": "standard",
+    "test": "node test",
     "prepare": "npm run build && node test",
     "build:acorn-numeric-separator": "babel node_modules/acorn-numeric-separator --out-dir lib/acorn-numeric-separator",
     "build:acorn-class-fields": "babel node_modules/acorn-class-fields --out-dir lib/acorn-class-fields",
