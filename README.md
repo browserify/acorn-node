@@ -1,8 +1,6 @@
 # acorn-node
 
-[Acorn](https://github.com/acornjs/acorn) preloaded with plugins for syntax parity with recent Node versions.
-
-It also includes versions of the plugins compiled with [Babel](https://github.com/babel/babel), so they can be run on old Node versions (0.6 and up).
+[Acorn](https://github.com/acornjs/acorn) with defaults for syntax parity with recent Node versions.
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
@@ -27,14 +25,9 @@ npm install acorn-node
 var acorn = require('acorn-node')
 ```
 
-The API is the same as [acorn](https://github.com/acornjs/acorn), but the following syntax features are enabled by default:
+The API is the same as [acorn](https://github.com/acornjs/acorn) but with different defaults, to match Node modules:
 
- - Public and private class instance fields
- - Public and private class static fields
-
-And the following options have different defaults from acorn, to match Node modules:
-
- - `ecmaVersion: 2021`
+ - `ecmaVersion: 2022`
  - `allowHashBang: true`
  - `allowReturnOutsideFunction: true`
 
@@ -48,9 +41,3 @@ See the [acorn documentation](https://github.com/acornjs/acorn#distwalkjs) for d
 ## License
 
 The files in the repo root and the ./test folder are licensed as [Apache-2.0](LICENSE.md).
-
-The files in lib/ are generated from other packages:
-
-- lib/class-fields: [acorn-class-fields](https://github.com/acornjs/acorn-class-fields), MIT
-- lib/class-private-elements: [acorn-class-private-elements](https://github.com/acornjs/acorn-class-private-elements), MIT
-- lib/static-class-features: [acorn-static-class-features](https://github.com/acornjs/acorn-static-class-features), MIT
