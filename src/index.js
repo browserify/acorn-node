@@ -1,16 +1,13 @@
 var acorn = require('acorn')
 
 var CJSParser = acorn.Parser
-  // Required paths should be relative to the package root, because Babel outputs this file there.
-  .extend(require('./lib/acorn-class-fields'))
-  .extend(require('./lib/acorn-static-class-features'))
   .extend(defaultOptionsPlugin)
 var ESModulesParser = CJSParser
 
 function mapOptions (opts) {
   if (!opts) opts = {}
   return {
-    ecmaVersion: 2021,
+    ecmaVersion: 2022,
     allowHashBang: true,
     allowReturnOutsideFunction: true,
     ...opts

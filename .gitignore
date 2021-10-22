@@ -27,6 +27,5 @@ build/Release
 node_modules
 package-lock.json
 
-lib/*
 /index.js
 /walk.js
