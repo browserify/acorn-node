@@ -36,8 +36,10 @@
   },
   "scripts": {
     "lint": "standard",
-    "test": "node test",
-    "prepare": "npm run build && node test",
+    "pretest": "npm run build",
+    "tests-only": "node test",
+    "test": "npm run tests-only && npm run lint",
+    "prepare": "npm run build",
     "build:self": "babel src --out-dir .",
     "build": "npm-run-all --parallel build:*"
   },
