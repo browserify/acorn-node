@@ -17,7 +17,7 @@ test('parses object spread syntax', function (t) {
 
 test('does not change main acorn module', function (t) {
   t.throws(function () {
-    baseAcorn.parse('var a = 10n')
+    baseAcorn.parse('return 10n', { ecmaVersion: 2022 })
   })
   t.end()
 })
