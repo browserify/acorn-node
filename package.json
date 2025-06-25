@@ -21,6 +21,9 @@
     "standard": "^13.1.0",
     "tape": "^4.13.3"
   },
+  "engines": {
+    "node": ">= 0.8"
+  },
   "homepage": "https://github.com/browserify/acorn-node",
   "keywords": [
     "acorn",
