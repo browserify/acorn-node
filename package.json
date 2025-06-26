@@ -40,7 +40,6 @@
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
-    "pretests-only": "npm run build",
     "tests-only": "node test",
     "test": "npm run tests-only",
     "posttest": "npx npm@\">= 10.2\" audit --production",
