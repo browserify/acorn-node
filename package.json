@@ -39,9 +39,11 @@
   },
   "scripts": {
     "lint": "standard",
-    "pretest": "npm run build",
+    "pretest": "npm run lint",
+    "pretests-only": "npm run build",
     "tests-only": "node test",
-    "test": "npm run tests-only && npm run lint",
+    "test": "npm run tests-only",
+    "posttest": "npx npm@\">= 10.2\" audit --production",
     "prepare": "npm run build",
     "build:self": "babel src --out-dir .",
     "build": "npm-run-all --parallel build:*"
