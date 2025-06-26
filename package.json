@@ -21,6 +21,9 @@
     "standard": "^13.1.0",
     "tape": "^4.13.3"
   },
+  "engines": {
+    "node": ">= 0.8"
+  },
   "homepage": "https://github.com/browserify/acorn-node",
   "keywords": [
     "acorn",
@@ -36,8 +39,11 @@
   },
   "scripts": {
     "lint": "standard",
-    "test": "node test",
-    "prepare": "npm run build && node test",
+    "pretest": "npm run lint",
+    "tests-only": "node test",
+    "test": "npm run tests-only",
+    "posttest": "npx npm@\">= 10.2\" audit --production",
+    "prepare": "npm run build",
     "build:self": "babel src --out-dir .",
     "build": "npm-run-all --parallel build:*"
   },
